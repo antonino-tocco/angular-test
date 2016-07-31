@@ -1,0 +1,26 @@
+{
+  "name": "angular-test",
+  "authors": [
+    "Antonino Tocco <antonino.tocco90@gmail.com>"
+  ],
+  "description": "angular test app with post stream",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "underscore": "^1.8.3",
+    "qunit": "^2.0.1"
+  }
+}
