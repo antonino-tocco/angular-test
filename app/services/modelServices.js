@@ -20,9 +20,15 @@ var modelServices = angular.module('ModelModule',['BaseServicesModule'])
             var streams = null;
             var Stream = function () {
                 angular.extend(this, new BaseObject());
+                angular.extend(this, new BaseObject());
+                this.build = function (item) {
+                    //Override default build method for validate date format
+                    angular.extend(this, item);
+                    this.created_at = new Date(moment(this.created_at, ['YYYY-MM-DD HH:mm', 'YYYY-M-DD HH:mm'])); // FOR VALIDATE DATE WITH ONE DIGIT MONTH
+                };
                 this.isRated = false;
                 this.getDate = function () {
-                    return new Date(moment(this.created_at, ['YYYY-MM-DD HH:mm', 'YYYY-M-DD HH:mm'])); // FOR VALIDATE DATE WITH ONE DIGIT MONTH
+                    return this.created_at;
                 };
                 this.getAuthor = function () {
                     return this.author;
