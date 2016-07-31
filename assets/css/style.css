@@ -22,10 +22,8 @@ header, footer {
     float:right;
 }
 .footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    margin-bottom:0px;
+    margin-top:50px;
     padding-top: 10px;
     min-height: 100px;
     background: #333;
@@ -34,4 +32,9 @@ header, footer {
 .article-header {
     font-size: 1.286em;
     font-weight: bold;
+}
+@media(max-width: 73.143em) {
+    .navbar-nav > li {
+        text-align: center;
+    }
 }
