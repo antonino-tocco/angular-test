@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-sm-12">
+        <h1>Stream</h1>
+        <!-- TEXT AREA FOR NEW STREAM -->
+        <div class="container-fluid m-bot20">
+            <form novalidate class="form"
+                  name="streamForm"
+                  ng-submit="createStream(streamForm.$valid)">
+                <div class="form-group">
+                    <textarea class="form-control"
+                              name="message"
+                              ng-minlength="3"
+                              ng-maxlength="200"
+                              ng-model="newStream.message"
+                              ng-required="true"
+                              placeholder="Il tuo messaggio..."></textarea>
+                    <div ng-messages="streamForm.message.$error">
+                        <p ng-message="minlength">Messaggio troppo breve.</p>
+                        <p ng-message="maxlength">Messaggio troppo lungo.</p>
+                        <p ng-message="required">Inserisci un messaggio.</p>
+                    </div>
+                </div>
+                <div class="btn-group btn-group-right">
+                    <button class="btn btn-primary" type="submit" ng-disabled="streamForm.$invalid">Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="container-fluid">
+            <div class="col-sm-4 select-container">
+                <select class="form-control" ng-model="selectedOrder"
+                        ng-options="order.field as order.name for order in orders">
+                </select>
+            </div>
+        </div>
+        <stream ng-repeat="stream in streams | orderBy: selectedOrder track by $index"
+            stream="stream" truncate="truncate" show-read-more="showReadMore">
+        </stream>
+    </div>
+</div>

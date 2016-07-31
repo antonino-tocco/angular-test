@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <article class="clearfix item">
+        <div class="article-header">
+            <p>{{ stream.author.username}} ({{stream.getDate() | date: 'dd/MM/yyyy HH:mm'}})</p>
+        </div>
+        <p ng-if="truncate">{{ stream.message | truncate }}</p>
+    </article>
+    <div class="btn-group-right">
+        <button class="btn btn-primary" ng-click="rate(stream)">
+            Vote <span class="badge">{{ stream.rating }}</span>
+        </button>
+        <button ng-if="showReadMore" class="btn btn-primary" ng-click="goToSingleStream(stream)">Read More</button>
+    </div>
+</div>

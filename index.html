@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Angular Test App</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-</head>
-<body>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <!-- SERVICES -->
+    <script type="text/javascript" src="app/services/baseServices.js"></script>
+    <script type="text/javascript" src="app/services/modelServices.js"></script>
+    <script type="text/javascript" src="app/services/userService.js"></script>
+    <!-- CONTROLLERS -->
+    <script type="text/javascript" src="app/controllers/baseController.js"></script>
+    <script type="text/javascript" src="app/controllers/homeController.js"></script>
+    <script type="text/javascript" src="app/controllers/streamController.js"></script>
 
+    <!-- DIRECTIVES -->
+    <script type="text/javascript" src="app/directives/mainHeader.js"></script>
+    <script type="text/javascript" src="app/directives/mainContent.js"></script>
+    <script type="text/javascript" src="app/directives/mainFooter.js"></script>
+    <script type="text/javascript" src="app/directives/stream.js"></script>
+
+    <!-- FILTERS -->
+    <script type="text/javascript" src="app/filters/truncate.js"></script>
+    <!-- MAIN ENTRY POINT -->
+    <script type="text/javascript" src="app/app.js"></script>
+</head>
+<body ng-app="AngularTest">
+    <div class="full-width-container" id="main-container" ng-controller="bootController">
+        <div class="full-width-container" ng-if="loading">
+            Loading...
+        </div>
+        <div ng-if="!loading" class="full-width-container">
+            <main-header class="full-width-container"></main-header>
+            <main-content class="container-fluid"></main-content>
+            <main-footer class="full-width-container footer"></main-footer>
+        </div>
+    </div>
 </body>
 </html>
