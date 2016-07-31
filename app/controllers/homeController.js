@@ -3,12 +3,20 @@ controllers.controller('homeController', ['$scope', '$controller', 'Streams', 'U
 
     $scope.orders = [
         {
-            name: 'Rating',
+            name: 'Rating (ASC)',
             field: 'rating'
         },
         {
-            name: 'Date',
+            name: 'Rating (DESC)',
+            field: '-rating'
+        },
+        {
+            name: 'Date (ASC)',
             field: 'created_at'
+        },
+        {
+            name: 'DATE (DESC)',
+            field: '-created_at'
         }
     ];
     $scope.newStream = {
