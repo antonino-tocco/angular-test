@@ -44,7 +44,7 @@ angular.module('BaseServicesModule', [])
         return module;
     }])
     .service('queryEngine', ['httpService', function (httpService) {
-        var baseUrl = '/resources/';
+        var baseUrl = './resources/';
         var streamUrl = baseUrl + 'stream-data.json';
         var whoAmIUrl = baseUrl + 'who-am-i.json';
         var module = {};
