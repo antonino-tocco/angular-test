@@ -20,7 +20,6 @@ var modelServices = angular.module('ModelModule',['BaseServicesModule'])
             var streams = null;
             var Stream = function () {
                 angular.extend(this, new BaseObject());
-                angular.extend(this, new BaseObject());
                 this.build = function (item) {
                     //Override default build method for validate date format
                     angular.extend(this, item);
