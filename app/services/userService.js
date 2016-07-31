@@ -17,6 +17,8 @@ angular.module('UserModule', ['BaseServicesModule'])
             },
             logout: function () {
                 //SIMULATE LOGOUT
+                this.profile = null;
+                this.isLogged = false;
             },
             getUsername: function () {
                 return this.profile.username;

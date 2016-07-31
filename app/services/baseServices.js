@@ -5,7 +5,7 @@ angular.module('BaseServicesModule', [])
     .service('constants', function () {
         return {
             KEYS: {
-                STREAM: 'STREAM_'
+                STREAM: 'STREAMS_'
             }
         }
     })
@@ -21,7 +21,7 @@ angular.module('BaseServicesModule', [])
         var module = {};
 
         module.set = function (key, value) {
-            memcache[hashCode(key)] = JSON.stringify(value);
+            memcache[hashCode(key)] = JSON.stringify(key);
         };
         module.get = function (key) {
             return memcache[hashCode(key)] ? JSON.parse(memcache[hashCode(key)]) : null;
@@ -44,7 +44,7 @@ angular.module('BaseServicesModule', [])
         return module;
     }])
     .service('queryEngine', ['httpService', function (httpService) {
-        var baseUrl = 'resources/';
+        var baseUrl = '/resources/';
         var streamUrl = baseUrl + 'stream-data.json';
         var whoAmIUrl = baseUrl + 'who-am-i.json';
         var module = {};

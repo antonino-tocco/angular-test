@@ -4,6 +4,7 @@
             <p>{{ stream.author.username}} ({{stream.getDate() | date: 'dd/MM/yyyy HH:mm'}})</p>
         </div>
         <p ng-if="truncate">{{ stream.message | truncate }}</p>
+        <p ng-if="!truncate">{{ stream.message }}</p>
     </article>
     <div class="btn-group-right">
         <button class="btn btn-primary" ng-click="rate(stream)">

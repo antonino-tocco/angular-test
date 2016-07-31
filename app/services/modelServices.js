@@ -38,10 +38,6 @@ var modelServices = angular.module('ModelModule',['BaseServicesModule'])
                     this.isRated = true;
                     this.save();
                 };
-                this.save = function () {
-                    var key = constants.KEYS.STREAM + this.id;
-                    storage.set(key, this);
-                };
             };
             module.getAll = function () {
                 var deferred = $q.defer();
