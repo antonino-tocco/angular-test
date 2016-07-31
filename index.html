@@ -44,7 +44,9 @@
 <body ng-app="AngularTest">
     <div class="full-width-container" id="main-container" ng-controller="bootController">
         <div class="full-width-container" ng-if="loading">
-            Loading...
+            <div class="center-block">
+                <p class="center-paragraph">Loading...</p>
+            </div>
         </div>
         <div ng-if="!loading" class="full-width-container">
             <main-header class="full-width-container"></main-header>

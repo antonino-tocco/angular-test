@@ -33,6 +33,13 @@ header, footer {
     font-size: 1.286em;
     font-weight: bold;
 }
+.center-block {
+    display:block;
+    margin: 0 auto;
+}
+.center-paragraph {
+    text-align: center;
+}
 @media(max-width: 73.143em) {
     .navbar-nav > li {
         text-align: center;
